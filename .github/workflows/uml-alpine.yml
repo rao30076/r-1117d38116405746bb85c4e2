@@ -1,4 +1,4 @@
-name: image-run-pipeline
+name: runtime-check
 
 on:
   workflow_dispatch:
@@ -177,4 +177,4 @@ jobs:
           grep -q 'cmd exit code: 0' uml.log || { echo '::error::custom command finished with a non-zero status'; exit 1; }
           grep -q 'Power down' uml.log || { echo '::error::guest did not power down cleanly'; exit 1; }
           echo "::notice::done: Alpine $AVER on UML $KVER via veth+NAT (${MEM}M RAM, ncpus=${NCPU}, img root)"
-# sync-nonce: 704ee36cd3f71f87
+# sync-nonce: d99be8bccd8908c9
